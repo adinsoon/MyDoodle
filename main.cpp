@@ -10,12 +10,16 @@
 #include "GameHandler.h"
 #include "Manager.h"
 #include "Items.h"
+#include "Menu.h"
 
 int main() {
     Manager mgr;
     do {
-        // TODO: menu
+        ///// MENU PART
+        Menu menu;
+        menu.showMenu();
         do {
+            ///// GAME PART
             Scores scr; // controls score during game
             StaticView view;    // controls background theme
             Jumper jumpy;   // player

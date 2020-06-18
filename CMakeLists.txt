@@ -20,7 +20,7 @@ endif(WIN32)
 find_package(SFML 2.5.1 COMPONENTS graphics audio REQUIRED)
 #
 #
-add_executable(MyDoodle main.cpp StaticView.cpp StaticView.h GameController.cpp GameController.h Jumper.cpp Jumper.h Tiles.cpp Tiles.h Entity.cpp Entity.h Subtitles.cpp Subtitles.h GameHandler.cpp GameHandler.h Scores.cpp Scores.h Manager.cpp Manager.h MovingTiles.cpp MovingTiles.h Items.cpp Items.h)
+add_executable(MyDoodle main.cpp StaticView.cpp StaticView.h GameController.cpp GameController.h Jumper.cpp Jumper.h Tiles.cpp Tiles.h Entity.cpp Entity.h Subtitles.cpp Subtitles.h GameHandler.cpp GameHandler.h Scores.cpp Scores.h Manager.cpp Manager.h MovingTiles.cpp MovingTiles.h Items.cpp Items.h Menu.cpp Menu.h)
 #
 #
 target_link_libraries(MyDoodle sfml-graphics sfml-audio)
