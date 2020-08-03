@@ -23,19 +23,22 @@ public:
     Items();
 
     // draw rocket or spring depending on provided string
-    void drawMe(std::string what, sf::RenderWindow &w1);
+    void drawMe(const std::string& what, sf::RenderWindow &w1);
 
     // prepare sprites to be drawn
     void format();
 
     // put it on the map but don't draw
-    void spawn(std::string what);
+    void spawn(const std::string& what);
+
+    // de-spawn it while reloading (actually take from the visible area)
+    void despawn(const std::string& what);
 
     // move down if character jumps up
-    void move(std::string what, float n);
+    void move(const std::string& what, float n);
 
     // return current position relative to window
-    sf::Rect<float> getItemPos(std::string what);
+    sf::Rect<float> getItemPos(const std::string& what);
 };
 
 

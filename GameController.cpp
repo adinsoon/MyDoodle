@@ -137,12 +137,10 @@ void GameController::stateCtrl() {
 void GameController::itemsCtrl(sf::RenderWindow &w1) {
     if(handy.getGameState() != LOSS) {
         if (rocket_time < timer[0]) {
-            std::cout << "rakieta:  " << timer[0] << std::endl;
             show_rocket = true;
             item.spawn("rocket");
             timer[0] = 0;
         } else if (spring_time < timer[1]) {
-            std::cout << "sprezyna: " << timer[1] << std::endl;
             show_spring = true;
             item.spawn("spring");
             timer[1] = 0;
@@ -151,6 +149,11 @@ void GameController::itemsCtrl(sf::RenderWindow &w1) {
             item.drawMe("rocket", w1);
         } else if (show_spring && timer[1] < time_present) {
             item.drawMe("spring", w1);
+        }
+        if (show_rocket && timer[0] > time_present) {
+            item.despawn("rocket");
+        } else if (show_spring && timer[1] > time_present) {
+            item.despawn("spring");
         }
         if (jumpy.getJumperPos().intersects(item.getItemPos("rocket"))) {
             sound.setBuffer(rocketjump);
